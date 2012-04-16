@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+-<?xml version="1.0" encoding="utf-8"?>
 <install type="module" version="1.6.0">
 
 	<name>VM - Product Slide Show</name> 
@@ -18,7 +18,8 @@
 	<config>
  		<fields name="params">
 			<fieldset name="basic">
-			
+			<gfiled >
+			sdfknslkdf
 				<field type="spacer" default="General Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 				<field name="productIds" type="text" default="" label="Product IDs" description="comma separted ids of the products"/>
@@ -70,45 +71,86 @@
 				</field>
 				<field name ="activePagerClass" type ="text" default ="activeSlide" label = "ActivePager Class" description="Class name used for the active pager element" />
 				<field name ="after" type="text" default="NULL" label = "After" description= "Transition Callback "/>
-				<field name ="allowPagerClickBubble" type="radio" default="no" label = "Allow Pager Click Bubble" description= "allows or prevents click event on pager anchors from bubbling  "/>
+				<field name ="allowPagerClickBubble" type="radio" default="no" label = "Allow Pager Click Bubble" description= "Allows or prevents click event on pager anchors from bubbling ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
+				<field name ="animIn" type="text" default="NULL" label = "Animation In" description= "Properties that define how the slide animates out   "/>
+				<field name ="animOut" type="text" default="NULL" label = "Animation Out" description= "Properties that define how the slide animates out   "/>
 				
+				<field name ="autostop" type="radio" default="no" label = "Animation Stop" description= "True to end slideshow after X transitions (where X == slide count) ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
    
-    allowPagerClickBubble: false, // allows or prevents click event on pager anchors from bubbling 
-    animIn:        null,  // properties that define how the slide animates in 
-    animOut:       null,  // properties that define how the slide animates out 
-    autostop:      0,     // true to end slideshow after X transitions (where X == slide count) 
-    autostopCount: 0,     // number of transitions (optionally used with autostop to define X) 
-    backwards:     false, // true to start slideshow at last slide and move backwards through the stack 
-    before:        null,  // transition callback (scope set to element to be shown):     function(currSlideElement, nextSlideElement, options, forwardFlag) 
-    cleartype:     !$.support.opacity,  // true if clearType corrections should be applied (for IE) 
-    cleartypeNoBg: false, // set to true to disable extra cleartype fixing (leave false to force background color setting on slides) 
-    containerResize: 1,   // resize container to fit largest slide 
-    continuous:    0,     // true to start next transition immediately after current one completes 
-    cssAfter:      null,  // properties that defined the state of the slide after transitioning out 
-    cssBefore:     null,  // properties that define the initial state of the slide before transitioning in 
-    fastOnEvent:   0,     // force fast transitions when triggered manually (via pager or prev/next); value == time in ms 
-    fit:           0,     // force slides to fit container 
-    fx:            'fade',// name of transition effect (or comma separated names, ex: 'fade,scrollUp,shuffle') 
-    fxFn:          null,  // function used to control the transition: function(currSlideElement, nextSlideElement, options, afterCalback, forwardFlag) 
-    manualTrump:   true,  // causes manual transition to stop an active transition instead of being ignored 
-    metaAttr:      'cycle',// data- attribute that holds the option data for the slideshow 
-    nowrap:        0,     // true to prevent slideshow from wrapping 
-    onPagerEvent:  null,  // callback fn for pager events: function(zeroBasedSlideIndex, slideElement) 
-    onPrevNextEvent: null,// callback fn for prev/next events: function(isNext, zeroBasedSlideIndex, slideElement) 
-    pager:         null,  // element, jQuery object, or jQuery selector string for the element to use as pager container 
-    pagerAnchorBuilder: null, // callback fn for building anchor links:  function(index, DOMelement) 
-    pagerEvent:    'click.cycle', // name of event which drives the pager navigation 
-    pauseOnPagerHover: 0, // true to pause when hovering over pager link 
-    prevNextEvent:'click.cycle',// event which drives the manual transition to the previous or next slide 
-    randomizeEffects: 1,  // valid when multiple effects are used; true to make the effect sequence random 
-    requeueOnImageNotLoaded: true, // requeue the slideshow if any image slides are not yet loaded 
-    requeueTimeout: 250,  // ms delay for requeue 
-    rev:           0,     // causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle) 
-
-    slideExpr:     null,  // expression for selecting slides (if something other than all children is required) 
-    slideResize:   1,     // force slide width/height to fixed size before every transition 
-
-    updateActivePagerLink: null, // callback fn invoked to update the active pager link (adds/removes activePagerClass style) 
+				<field name ="autostopCount" type="text" default="0" label = "Auto Stop Count" description= "Number of transitions"/>
+				
+				<field name ="backwards" type="radio" default="no" label = "Backwards" description= "true to start slideshow at last slide and move backwards through the stack ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="before" type="text" default="NULL" label = "Before" description= "Transition Callback"/>
+				
+				<field name ="cleartype" type="radio" default="no" label = "Clear Type" description= "Support Opacity,  // true if clearType corrections should be applied (for IE) ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="containerResize" type="text" default="1" label = "Container Resize" description= "Resize container to fit largest slide"/>
+	
+				<field name ="cleartypeNoBg" type="radio" default="no" label = "Clear Type No Bg" description= "Set to true to disable extra cleartype fixing (leave false to force background color setting on slides) ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				
+				<field name ="continuous" type="radio" default="no" label = "Continuous" description= "True to start next transition immediately after current one completes  ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				
+				<field name ="cssAfter" type="text" default="NULL" label = "CSS After" description= "Properties that defined the state of the slide after transitioning out "/>
+				<field name ="cssBefore" type="text" default="NULL" label = "CSS Before" description= "Properties that define the initial state of the slide before transitioning in"/>
+				<field name ="fastOnEvent" type="text" default="0" label = "Fast on Event" description= "Force fast transitions when triggered manually (via pager or prev/next); value == time in ms "/>
+				<field name ="fit" type="text" default="0" label = "Fit" description= "Force slides to fit container "/>
+				<field name ="fx" type="text" default="fade" label = "Fx" description= "Name of transition effect (or comma separated names, ex: 'fade,scrollUp,shuffle') "/>
+				<field name ="fxFn" type="text" default="NULL" label = "FxFn" description= "Function used to control the transition: function(currSlideElement, nextSlideElement, options, afterCalback, forwardFlag)"/>
+				
+				<field name ="manualTrump" type="radio" default="yes" label = "Manual Trump" description= "causes manual transition to stop an active transition instead of being ignored ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="metaAttr" type="text" default="cycle" label = "Meta Attribute" description= "Data - attribute that holds the option data for the slideshow"/>
+				<field name ="nowrap" type="radio" default="no" label = "No Wrap" description= "True to prevent slideshow from wrapping ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="onPagerEvent" type="text" default="NULL" label = "On Pager Event" description= "Callback fn for pager events: function(zeroBasedSlideIndex, slideElement) "/>
+				<field name ="onPrevNextEvent" type="text" default="NULL" label = "On Previous Next Event" description= "Callback fn for prev/next events: function(isNext, zeroBasedSlideIndex, slideElement)" />
+				<field name ="pager" type="text" default="NULL" label = "Pager" description= "Element, jQuery object, or jQuery selector string for the element to use as pager container " />
+				<field name ="pagerAnchorBuilder" type="text" default="NULL" label = "Pager Anchor Builder" description= "Callback fn for building anchor links:  function(index, DOMelement)/">
+				<field name ="pagerEvent" type="text" default="click.cycle" label = "Pager Event" description= "Name of event which drives the pager navigation " />
+				<field name ="pauseOnPagerHover" type="text" default="0" label = "Pause On Pager Hover" description= "Callback fn for building anchor links:  function(index, DOMelement)"/>
+				<field name ="prevNextEvent" type="text" default="click.cycle" label = "Previous Next Event" description= "Event which drives the manual transition to the previous or next slide " />
+				<field name ="randomizeEffects" type="text" default="1" label = "Randomize Effects" description= "Valid when multiple effects are used; true to make the effect sequence random "/>
+				
+				<field name ="requeueOnImageNotLoaded" type="radio" default="yes" label = "Requeue On Image Not Loaded" description= "requeue the slideshow if any image slides are not yet loaded ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="requeueTimeout" type="text" default="250" label = "Requeue Timeout" description= "Ms delay for requeue"/>
+				<field name ="rev" type="radio" default="no" label = "Reverse" description= "Causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle) ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="requeueTimeout" type="text" default="250" label = "Requeue Timeout" description= "Ms delay for requeue"/>
+				<field name ="rev" type="radio" default="no" label = "Reverse" description= "Causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle) ">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name ="slideExpr" type="text" default="NULL" label = "Slide Expression" description= "expression for selecting slides (if something other than all children is required) "/>
+				<field name ="slideResize" type="text" default="1" label = "Slide Resize" description= "Force slide width/height to fixed size before every transition "/>
+			s	<field name ="updateActivePagerLink" type="text" default="NULL" label = "Update Active Pager Link" description= "Callback fn invoked to update the active pager link (adds/removes activePagerClass style)  "/>
+				
 			</fieldset>
 		</fields>
 	</config>
