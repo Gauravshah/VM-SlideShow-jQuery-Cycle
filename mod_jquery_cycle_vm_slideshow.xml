@@ -1,4 +1,4 @@
--<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <install type="module" version="1.6.0">
 
 	<name>VM - Product Slide Show</name> 
@@ -18,14 +18,12 @@
 	<config>
  		<fields name="params">
 			<fieldset name="basic">
-			<gfiled >
-			sdfknslkdf
 				<field type="spacer" default="General Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 				<field name="productIds" type="text" default="" label="Product IDs" description="comma separted ids of the products"/>
 				<field name="width" type="text" default="auto" label="Width" description="Width (px)"/>
 				<field name="height" type="text" default="auto" label="height" description="height (px)"/>
-				<field name="startingSlide" type="text" default="0" label="Starting Slide" description="Zero-based index of the first slide to be displayed "/>
+				<field name="startigSlide" type="text" default="0" label="Starting Slide" description="Zero-based index of the first slide to be displayed "/>
 				
 				<field type="spacer" default="Speed Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
@@ -127,7 +125,7 @@
 				<field name ="onPagerEvent" type="text" default="NULL" label = "On Pager Event" description= "Callback fn for pager events: function(zeroBasedSlideIndex, slideElement) "/>
 				<field name ="onPrevNextEvent" type="text" default="NULL" label = "On Previous Next Event" description= "Callback fn for prev/next events: function(isNext, zeroBasedSlideIndex, slideElement)" />
 				<field name ="pager" type="text" default="NULL" label = "Pager" description= "Element, jQuery object, or jQuery selector string for the element to use as pager container " />
-				<field name ="pagerAnchorBuilder" type="text" default="NULL" label = "Pager Anchor Builder" description= "Callback fn for building anchor links:  function(index, DOMelement)/">
+				<field name ="pagerAnchorBuilder" type="text" default="NULL" label = "Pager Anchor Builder" description= "Callback fn for building anchor links:  function(index, DOMelement)" />
 				<field name ="pagerEvent" type="text" default="click.cycle" label = "Pager Event" description= "Name of event which drives the pager navigation " />
 				<field name ="pauseOnPagerHover" type="text" default="0" label = "Pause On Pager Hover" description= "Callback fn for building anchor links:  function(index, DOMelement)"/>
 				<field name ="prevNextEvent" type="text" default="click.cycle" label = "Previous Next Event" description= "Event which drives the manual transition to the previous or next slide " />
@@ -147,9 +145,9 @@
 					<option value="yes">Yes</option>
 					<option value="no">No</option>
 				</field>
-				<field name ="slideExpr" type="text" default="NULL" label = "Slide Expression" description= "expression for selecting slides (if something other than all children is required) "/>
-				<field name ="slideResize" type="text" default="1" label = "Slide Resize" description= "Force slide width/height to fixed size before every transition "/>
-			s	<field name ="updateActivePagerLink" type="text" default="NULL" label = "Update Active Pager Link" description= "Callback fn invoked to update the active pager link (adds/removes activePagerClass style)  "/>
+				<field name ="slideExpr" type="text" default="NULL" label = "Slide Expression" description= "expression for selecting slides (if something other than all children is required)" />
+				<field name ="slideResize" type="text" default="1" label = "Slide Resize" description= "Force slide width/height to fixed size before every transition" />
+				<field name ="updateActivePagerLink" type="text" default="NULL" label = "Update Active Pager Link" description= "Callback fn invoked to update the active pager link (adds/removes activePagerClass style)" />
 				
 			</fieldset>
 		</fields>
