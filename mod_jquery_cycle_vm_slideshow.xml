@@ -21,8 +21,13 @@
 				<field type="spacer" default="General Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 				<field name="productIds" type="text" default="" label="Product IDs" description="comma separted ids of the products"/>
+<<<<<<< HEAD
 				<field name="width" type="text" default="auto" label="Width" description="Width (Px)"/>
 				<field name="height" type="text" default="auto" label="Height" description="Height (Px)"/>
+=======
+				<field name="width" type="text" default="auto" label="Width" description="Width (px)"/>
+				<field name="height" type="text" default="auto" label="height" description="height (px)"/>
+>>>>>>> 25af0bde48ab31601f13fdf4df871bd394fa8206
 				<field name="startigSlide" type="text" default="0" label="Starting Slide" description="Zero-based index of the first slide to be displayed "/>
 				
 				<field type="spacer" default="Speed Settings" />
