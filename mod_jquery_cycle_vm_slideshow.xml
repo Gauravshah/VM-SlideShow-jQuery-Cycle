@@ -21,10 +21,44 @@
 				<field type="spacer" default="General Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 				<field name="productIds" type="text" default="" label="Product IDs" description="comma separted ids of the products"/>
-				<field name="width" type="text" default="auto" label="Width" description="Width (Px)"/>
-				<field name="height" type="text" default="auto" label="Height" description="Height (Px)"/>
+				<field name="width" type="text" default="auto" label="Width" description="Width (px)"/>
+				<field name="height" type="text" default="auto" label="height" description="height (px)"/>
 				<field name="startigSlide" type="text" default="0" label="Starting Slide" description="Zero-based index of the first slide to be displayed "/>
 				
+				<field type="spacer" default="Speed Settings" />
+				<field name="@spacer" type="spacer" default="" label="" description=""/>
+
+	
+				<field name="productName" type="radio" default="yes" label="Product Name" description="Name of the product">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
+				<field name="productWeightType" type="radio" default="yes" label="Product Weight Type" description="Category of product weight">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
+				<field name="productLength" type="radio" default="no" label="Product Length" description="Length of the product">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
+				<field name="productInStock" type="radio" default="no" label="Product In Stock" description="Product Stock Information">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
+				<field name="productSales" type="radio" default="no" label="Product Sales" description="Total Sales">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
+				<field name="categoryName" type="radio" default="no" label="Category Name" description="Category name">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+
 				<field type="spacer" default="Speed Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 			
