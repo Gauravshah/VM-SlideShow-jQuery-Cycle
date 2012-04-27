@@ -12,7 +12,7 @@ if(!class_exists('VmModel'))require(JPATH_VM_ADMINISTRATOR.DS.'helpers'.DS.'vmmo
 		require(JPATH_VM_ADMINISTRATOR . DS . 'models' . DS . 'media.php');
 		
 		$attributes_map = Array(
-		"productName"=>"product_name",
+		"productName" => "product_name",
 		"productWeightType" => "product_weight_uom",
 		"productWeight" => "product_weight",
 		"productLength" => "product_length",
@@ -61,35 +61,36 @@ $images = $mediaModel->createMediaByIds($pro->virtuemart_media_id);
 							foreach($attributes_map as $k=>$v)
 							{
 								$flag=0;
-								if  ($params->get('productName') == 'yes')
+								if  (($params->get('productName') == 'yes') && !strcmp("productName",$k))
 								{
 									$flag=1;
 								}
-								else if($params->get('productWeightType') == 'yes')
+								else if(($params->get('productWeightType') == 'yes') && !strcmp("productWeightType",$k))
 								{
 									$flag=1;
 								}
-								else if($params->get('productWeight') == 'yes')
+								else if(($params->get('productWeight') == 'yes') && !strcmp("productWeight",$k))
+								{
+									echo ($params->get('productWeight') == 'yes') && !strcmp("productWeight",$k)."hello";
+									$flag=1;
+								}
+								else if(($params->get('productLength') == 'yes') && !strcmp("productLength",$k))
 								{
 									$flag=1;
 								}
-								else if($params->get('productLength') == 'yes')
+								else if(($params->get('productInStock') == 'yes')  && !strcmp("productInStock",$k))
 								{
 									$flag=1;
 								}
-								else if($params->get('productInStock') == 'yes') 
+								else if(($params->get('productSales') == 'yes') && !strcmp("productSales",$k))
 								{
 									$flag=1;
 								}
-								else if($params->get('productSales') == 'yes') 							
+								else if(($params->get('productPrice') == 'yes')  && !strcmp("productPrice",$k))
 								{
 									$flag=1;
 								}
-								else if($params->get('productPrice') == 'yes') 	
-								{
-									$flag=1;
-								}
-								else if($params->get('categoryName') == 'yes')
+								else if(($params->get('categoryName') == 'yes') && !strcmp("categoryName",$k))
 								{
 									$flag=1;
 								}
@@ -98,8 +99,9 @@ $images = $mediaModel->createMediaByIds($pro->virtuemart_media_id);
 									$flag=0;
 								
 								}
-								if($flag=1)
+								if($flag==1)
 								{?>  
+										
 										<li><span class="left"><?php echo $k?></span> <?php echo $pro->$v ?></li>
 						<?php	}
 							}?>
