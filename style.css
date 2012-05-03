@@ -1,0 +1,85 @@
+.farme-slide-text
+{
+float:right;
+   padding: 0px 51px;
+  /*  width: 340px;*/
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+}
+
+.farme-slide-text .left {
+    color: #171717;
+    float: left;
+}
+.slider-price {
+    color: #171717;
+    float: right;
+   
+    font-size: 32px;
+}
+.frame-price {
+    margin-top: 21px;
+}
+.slider-button a {
+    background: none repeat scroll 0 0 #B0171F;
+    color: #FFFFFF;
+    float: left;
+    font-size: 16px;
+    height: 31px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 92px;
+}
+
+.productImage
+{
+float:left;
+
+}
+
+ul.slide-text li {
+    border-bottom: 1px solid #E9E8E8 !important;
+    clear: both;
+    color: #7E7E7E;
+    font-size: 16px;
+    list-style-type: none;
+    padding: 9px 0;
+    text-align: right !important;
+width:312px;
+}
+#pager a {
+    background-image: url("nav-slide.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 9px;
+    line-height: 0;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: top;
+    width: 9px;
+}
+
+
+#slideshow{ background:none; overflow:hidden; width:960px; height:300px; margin:0px auto}
+#slideshow img{ width:518px; height:300px; float:left;}
+#slideshow_navigation{position:relative; z-index:160;  }
+
+#pager {
+    float: right;
+    position: absolute;
+    right: 52px;
+    top: 290px;
+}
+#pager a.activeSlide {
+    background-image: url("nav-slide.png");
+    background-position: 0 -9px;
+    background-repeat: no-repeat;
+    height: 9px;
+    margin-top: 0;
+    width: 9px;
+}

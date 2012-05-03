@@ -13,6 +13,7 @@
  	<files>
  		<filename module="mod_jquery_cycle_vm_slideshow">mod_jquery_cycle_vm_slideshow.php</filename>
 		<filename module="mod_jquery_cycle_vm_slideshow">jquery.cycle.all.js</filename>
+				<filename module="mod_jquery_cycle_vm_slideshow">style.css</filename>
 		<filename>index.html</filename>
 	</files>
 	<config>
@@ -64,7 +65,7 @@
 					<option value="no">No</option>
 				</field>
 			</fieldset>
-			<fieldset name="display" label="jQuery Cycle Settings">
+			<fieldset name="jQuery" label="jQuery Cycle Settings">
 
 				<field type="spacer" default="Speed Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
@@ -72,21 +73,54 @@
 				<field name="speed" type = "text" default = "1000" label = "Speed" description = " speed of the transition (any valid fx speed value) "/>
 				<field name="speedIn" type = "text" default = "NULL" label = "Speed In" description = "speed of the 'in' transition  "/>
 				<field name="speedOut" type = "text" default = "NULL" label = "Speed Out" description = " speed of the 'out' transition  "/>
-				<field name="delay" type = "radio" default = "yes" label = "Delay" description = "Delay">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
+				<field name="delay" type = "text" default = "NULL" label = "Delay" description = "Delay"/>
 				
 				<field type="spacer" default="Other Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
-			
-				<field name="sync" type = "text" default = "1" label = "Sync" description = "Delay"/>
-				<field name="timeout" type = "text" default = "4000" label = "Delay" description = "Milliseconds between slide transitions (0 to disable auto advance)"/>
+				
+				<field name ="fx" type="list" default="fade" label = "Fx" description= "Name of transition effect (or comma separated names, ex: 'fade,scrollUp,shuffle') ">
+					<option value="blindX">blindX</option>
+					<option value="blindY">blindY</option>
+					<option value="blindZ">blindZ</option>
+					<option value="cover">cover</option>
+					<option value="curtainX">curtainX</option>
+					<option value="curtainY">curtainY</option>
+					<option value="fade">fade</option>
+					<option value="fadeZoom">fadeZoom</option>
+					<option value="growX">growX</option>
+					<option value="growY">growY</option>
+					<option value="scrollUp">scrollUp</option>
+					<option value="scrollDown">scrollDown</option>
+					<option value="scrollLeft">scrollLeft</option>
+					<option value="scrollRight">scrollRight</option>
+					<option value="scrollHorz">scrollHorz</option>
+					<option value="scrollVert">scrollVert</option>
+					<option value="shuffle">shuffle</option>
+					<option value="slideX">slideX</option>
+					<option value="slideY">slideY</option>
+					<option value="toss">toss</option>
+					<option value="turnUp">turnUp</option>
+					<option value="turnDown">turnDown</option>
+					<option value="turnLeft">turnLeft</option>
+					<option value="turnRight">turnRight</option>
+					<option value="uncover">uncover</option>
+					<option value="wipe">wipe</option>
+					<option value="zoom">zoom</option>
+				</field>
+				<field name="timeOut" type = "text" default = "4000" label = "Time Out" description = "Milliseconds between slide transitions (0 to disable auto advance)"/>
 				<field name="timeoutFn" type = "text" default = "NULL" label = "Time Out Function" description = "callback for determining per-slide timeout value"/>
 				
-				<field name="random" type="radio" default="yes" label="Random" description="Randomness">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name="random" type="radio" default="1" label="Random" description="Randomness">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name = "pause" type = "radio" default="1" label="Pause" description = "true to enable pause on hover">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name = "sync" type = "radio" default="1" label="Sync" description = "">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</field>
 				<field name="shuffle" type="radio" default="no" label="Shuffle" description="Shuffle Animation">
 					<option value="yes">Yes</option>
@@ -99,10 +133,7 @@
 				 
 				<field name="next" type ="text" default = "NULL" label = "Next" description ="Element, jQuery object, or jQuery selector string for the element to use as event trigger for next slide "/>
 				<field name="end" type="text" default ="NULL" label = "End" description = "Callback invoked when the slideshow terminates (use with autostop or nowrap options): function(options)"/>
-				<field name = "pause" type = "radio" default="yes" label="Pause" description = "true to enable pause on hover">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
+				
 				<field name="prev" type = "text" default ="NULL" label="Previous" description = "Element, jQuery object, or jQuery selector string for the element to use as event trigger for previous slide"/> 
 				<field name="backwards" type ="radio" default ="no" label="Backwards" description = "true to start slideshow at last slide and move backwards through the stack ">
 					<option value="yes">Yes</option>
@@ -151,7 +182,8 @@
 				<field name ="cssBefore" type="text" default="NULL" label = "CSS Before" description= "Properties that define the initial state of the slide before transitioning in"/>
 				<field name ="fastOnEvent" type="text" default="0" label = "Fast on Event" description= "Force fast transitions when triggered manually (via pager or prev/next); value == time in ms "/>
 				<field name ="fit" type="text" default="0" label = "Fit" description= "Force slides to fit container "/>
-				<field name ="fx" type="text" default="fade" label = "Fx" description= "Name of transition effect (or comma separated names, ex: 'fade,scrollUp,shuffle') "/>
+				
+				
 				<field name ="fxFn" type="text" default="NULL" label = "FxFn" description= "Function used to control the transition: function(currSlideElement, nextSlideElement, options, afterCalback, forwardFlag)"/>
 				
 				<field name ="manualTrump" type="radio" default="yes" label = "Manual Trump" description= "causes manual transition to stop an active transition instead of being ignored ">
