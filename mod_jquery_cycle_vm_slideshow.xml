@@ -24,7 +24,7 @@
 				<field name="productIds" type="text" default="" label="Product IDs" description="comma separted ids of the products"/>
 				<field name="width" type="text" default="auto" label="Width" description="Width (px)"/>
 				<field name="height" type="text" default="auto" label="height" description="height (px)"/>
-				<field name="startigSlide" type="text" default="0" label="Starting Slide" description="Zero-based index of the first slide to be displayed "/>
+				<field name="startingSlide" type="text" default="1" label="Starting Slide" description="Zero-based index of the first slide to be displayed "/>
 			</fieldset>
 			
 			<fieldset name="display" label="Display Settings">
@@ -32,38 +32,14 @@
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 
 	
-				<field name="productName" type="radio" default="yes" label="Product Name" description="Name of the product">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="productWeight" type="radio" default="yes" label="Product Weight" description="Product Weight">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="productWeightType" type="radio" default="yes" label="Product Weight Type" description="Category of product weight">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="productLength" type="radio" default="no" label="Product Length" description="Length of the product">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="productPrice" type="radio" default="yes" label="Product Price" description="Price of the product">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="productInStock" type="radio" default="no" label="Product In Stock" description="Product Stock Information">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="productSales" type="radio" default="no" label="Product Sales" description="Total Sales">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name="categoryName" type="radio" default="no" label="Category Name" description="Category name">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
+				<field name="productName" type="text" default="Name" label="Product Name" description="Name of the product"/>
+				<field name="productWeight" type="text" default="" label="Product Weight" description="Product Weight"/>
+				<field name="productWeightType" type="text" default="" label="Product Weight Type" description="Category of product weight"/>
+				<field name="productLength" type="text" default="" label="Product Length" description="Length of the product"/>
+				<field name="productPrice" type="text" default="" label="Product Price" description="Price of the product"/>
+				<field name="productInStock" type="text" default="" label="Product In Stock" description="Product Stock Information"/>
+				<field name="productSales" type="text" default="" label="Product Sales" description="Total Sales"/>
+				<field name="categoryName" type="text" default="" label="Category Name" description="Category name"/>
 			</fieldset>
 			<fieldset name="jQuery" label="jQuery Cycle Settings">
 
@@ -71,9 +47,9 @@
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
 			
 				<field name="speed" type = "text" default = "1000" label = "Speed" description = " speed of the transition (any valid fx speed value) "/>
-				<field name="speedIn" type = "text" default = "NULL" label = "Speed In" description = "speed of the 'in' transition  "/>
-				<field name="speedOut" type = "text" default = "NULL" label = "Speed Out" description = " speed of the 'out' transition  "/>
-				<field name="delay" type = "text" default = "NULL" label = "Delay" description = "Delay"/>
+				<field name="speedIn" type = "text" default = "1000" label = "Speed In" description = "speed of the 'in' transition  "/>
+				<field name="speedOut" type = "text" default = "1000" label = "Speed Out" description = " speed of the 'out' transition  "/>
+				<field name="delay" type = "text" default = "1000" label = "Delay" description = "Delay"/>
 				
 				<field type="spacer" default="Other Settings" />
 				<field name="@spacer" type="spacer" default="" label="" description=""/>
@@ -107,9 +83,10 @@
 					<option value="wipe">wipe</option>
 					<option value="zoom">zoom</option>
 				</field>
-				<field name="timeOut" type = "text" default = "4000" label = "Time Out" description = "Milliseconds between slide transitions (0 to disable auto advance)"/>
-				<field name="timeoutFn" type = "text" default = "NULL" label = "Time Out Function" description = "callback for determining per-slide timeout value"/>
-				
+				<field name="timeout" type = "text" default = "4000" label = "Time Out" description = "Milliseconds between slide transitions (0 to disable auto advance)"/>
+<!--				<field name="timeoutFn" type = "text" default = "null" label = "Time Out Function" description = "callback for determining per-slide timeout value"/>
+	-->
+	
 				<field name="random" type="radio" default="1" label="Random" description="Randomness">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
@@ -122,105 +99,100 @@
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
-				<field name="shuffle" type="radio" default="no" label="Shuffle" description="Shuffle Animation">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				
-				<field name="easeIn" type = "text" default = "NULL" label = "Ease In" description = "Easing for in transition "/>
-				<field name="easeOut" type = "text" default = "NULL" label = "Ease Out" description = "Easing for out transition "/>
-				<field name="easing" type = "text" default = "NULL" label = "Easing" description = "Easing method for both in and out transitions "/>
+				<field name="shuffle" type="text" default="null" label="Shuffle" description="Shuffle Animation" />
+
+<!--				<field name="easeIn" type = "text" default = "null" label = "Ease In" description = "Easing for in transition "/>
+				<field name="easeOut" type = "text" default = "null" label = "Ease Out" description = "Easing for out transition "/>
+				<field name="easing" type = "text" default = "null" label = "Easing" description = "Easing method for both in and out transitions "/>
 				 
-				<field name="next" type ="text" default = "NULL" label = "Next" description ="Element, jQuery object, or jQuery selector string for the element to use as event trigger for next slide "/>
-				<field name="end" type="text" default ="NULL" label = "End" description = "Callback invoked when the slideshow terminates (use with autostop or nowrap options): function(options)"/>
-				
-				<field name="prev" type = "text" default ="NULL" label="Previous" description = "Element, jQuery object, or jQuery selector string for the element to use as event trigger for previous slide"/> 
+				<field name="next" type ="text" default = "null" label = "Next" description ="Element, jQuery object, or jQuery selector string for the element to use as event trigger for next slide "/>
+				<field name="end" type="text" default ="null" label = "End" description = "Callback invoked when the slideshow terminates (use with autostop or nowrap options): function(options)"/>
+	-			
+				<field name="prev" type = "text" default ="null" label="Previous" description = "Element, jQuery object, or jQuery selector string for the element to use as event trigger for previous slide"/> 
 				<field name="backwards" type ="radio" default ="no" label="Backwards" description = "true to start slideshow at last slide and move backwards through the stack ">
 					<option value="yes">Yes</option>
 					<option value="no">No</option>
-				</field>
+				</field> -->
 				<field name ="activePagerClass" type ="text" default ="activeSlide" label = "ActivePager Class" description="Class name used for the active pager element" />
-				<field name ="after" type="text" default="NULL" label = "After" description= "Transition Callback "/>
-				<field name ="allowPagerClickBubble" type="radio" default="no" label = "Allow Pager Click Bubble" description= "Allows or prevents click event on pager anchors from bubbling ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+<!--				<field name ="after" type="text" default="null" label = "After" description= "Transition Callback "/> -->
+				<field name ="allowPagerClickBubble" type="radio" default="false" label = "Allow Pager Click Bubble" description= "Allows or prevents click event on pager anchors from bubbling ">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
 				</field>
 
-				<field name ="animIn" type="text" default="NULL" label = "Animation In" description= "Properties that define how the slide animates out   "/>
-				<field name ="animOut" type="text" default="NULL" label = "Animation Out" description= "Properties that define how the slide animates out   "/>
+				<field name ="animIn" type="textarea" default="null" label = "Animation In" description= "Properties that define how the slide animates out   "/>
+				<field name ="animOut" type="textarea" default="null" label = "Animation Out" description= "Properties that define how the slide animates out   "/>
 				
-				<field name ="autostop" type="radio" default="no" label = "Animation Stop" description= "True to end slideshow after X transitions (where X == slide count) ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="autostop" type="radio" default="0" label = "Animation Stop" description= "True to end slideshow after X transitions (where X == slide count) ">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</field>
+				
    
 				<field name ="autostopCount" type="text" default="0" label = "Auto Stop Count" description= "Number of transitions"/>
 				
-				<field name ="backwards" type="radio" default="no" label = "Backwards" description= "true to start slideshow at last slide and move backwards through the stack ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="backwards" type="radio" default="false" label = "Backwards" description= "true to start slideshow at last slide and move backwards through the stack ">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
 				</field>
-				<field name ="before" type="text" default="NULL" label = "Before" description= "Transition Callback"/>
+<!--				<field name ="before" type="text" default="null" label = "Before" description= "Transition Callback"/>
 				
 				<field name ="cleartype" type="radio" default="no" label = "Clear Type" description= "Support Opacity,  // true if clearType corrections should be applied (for IE) ">
 					<option value="yes">Yes</option>
 					<option value="no">No</option>
 				</field>
+				-->
 				<field name ="containerResize" type="text" default="1" label = "Container Resize" description= "Resize container to fit largest slide"/>
 	
-				<field name ="cleartypeNoBg" type="radio" default="no" label = "Clear Type No Bg" description= "Set to true to disable extra cleartype fixing (leave false to force background color setting on slides) ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="cleartypeNoBg" type="radio" default="false" label = "Clear Type No Bg" description= "Set to true to disable extra cleartype fixing (leave false to force background color setting on slides) ">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
 				</field>
 				
-				<field name ="continuous" type="radio" default="no" label = "Continuous" description= "True to start next transition immediately after current one completes  ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="continuous" type="radio" default="0" label = "Continuous" description= "True to start next transition immediately after current one completes  ">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</field>
 				
-				<field name ="cssAfter" type="text" default="NULL" label = "CSS After" description= "Properties that defined the state of the slide after transitioning out "/>
-				<field name ="cssBefore" type="text" default="NULL" label = "CSS Before" description= "Properties that define the initial state of the slide before transitioning in"/>
+				<field name ="cssAfter" type="textarea" default="null" label = "CSS After" description= "Properties that defined the state of the slide after transitioning out "/>
+				<field name ="cssBefore" type="textarea" default="null" label = "CSS Before" description= "Properties that define the initial state of the slide before transitioning in"/>
 				<field name ="fastOnEvent" type="text" default="0" label = "Fast on Event" description= "Force fast transitions when triggered manually (via pager or prev/next); value == time in ms "/>
 				<field name ="fit" type="text" default="0" label = "Fit" description= "Force slides to fit container "/>
 				
 				
-				<field name ="fxFn" type="text" default="NULL" label = "FxFn" description= "Function used to control the transition: function(currSlideElement, nextSlideElement, options, afterCalback, forwardFlag)"/>
-				
-				<field name ="manualTrump" type="radio" default="yes" label = "Manual Trump" description= "causes manual transition to stop an active transition instead of being ignored ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+<!--				<field name ="fxFn" type="text" default="null" label = "FxFn" description= "Function used to control the transition: function(currSlideElement, nextSlideElement, options, afterCalback, forwardFlag)"/>
+	-->			
+				<field name ="manualTrump" type="radio" default="true" label = "Manual Trump" description= "causes manual transition to stop an active transition instead of being ignored ">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
 				</field>
 				<field name ="metaAttr" type="text" default="cycle" label = "Meta Attribute" description= "Data - attribute that holds the option data for the slideshow"/>
-				<field name ="nowrap" type="radio" default="no" label = "No Wrap" description= "True to prevent slideshow from wrapping ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="nowrap" type="radio" default="0" label = "No Wrap" description= "True to prevent slideshow from wrapping ">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</field>
-				<field name ="onPagerEvent" type="text" default="NULL" label = "On Pager Event" description= "Callback fn for pager events: function(zeroBasedSlideIndex, slideElement) "/>
-				<field name ="onPrevNextEvent" type="text" default="NULL" label = "On Previous Next Event" description= "Callback fn for prev/next events: function(isNext, zeroBasedSlideIndex, slideElement)" />
-				<field name ="pager" type="text" default="NULL" label = "Pager" description= "Element, jQuery object, or jQuery selector string for the element to use as pager container " />
-				<field name ="pagerAnchorBuilder" type="text" default="NULL" label = "Pager Anchor Builder" description= "Callback fn for building anchor links:  function(index, DOMelement)" />
+<!--				<field name ="onPagerEvent" type="text" default="null" label = "On Pager Event" description= "Callback fn for pager events: function(zeroBasedSlideIndex, slideElement) "/>
+				<field name ="onPrevNextEvent" type="text" default="null" label = "On Previous Next Event" description= "Callback fn for prev/next events: function(isNext, zeroBasedSlideIndex, slideElement)" />
+	-->			<field name ="pager" type="text" default="null" label = "Pager" description= "Element, jQuery object, or jQuery selector string for the element to use as pager container " />
+		<!--		<field name ="pagerAnchorBuilder" type="text" default="null" label = "Pager Anchor Builder" description= "Callback fn for building anchor links:  function(index, DOMelement)" /> -->
 				<field name ="pagerEvent" type="text" default="click.cycle" label = "Pager Event" description= "Name of event which drives the pager navigation " />
 				<field name ="pauseOnPagerHover" type="text" default="0" label = "Pause On Pager Hover" description= "Callback fn for building anchor links:  function(index, DOMelement)"/>
 				<field name ="prevNextEvent" type="text" default="click.cycle" label = "Previous Next Event" description= "Event which drives the manual transition to the previous or next slide " />
 				<field name ="randomizeEffects" type="text" default="1" label = "Randomize Effects" description= "Valid when multiple effects are used; true to make the effect sequence random "/>
 				
-				<field name ="requeueOnImageNotLoaded" type="radio" default="yes" label = "Requeue On Image Not Loaded" description= "requeue the slideshow if any image slides are not yet loaded ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="requeueOnImageNotLoaded" type="radio" default="true" label = "Requeue On Image Not Loaded" description= "requeue the slideshow if any image slides are not yet loaded ">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
 				</field>
 				<field name ="requeueTimeout" type="text" default="250" label = "Requeue Timeout" description= "Ms delay for requeue"/>
-				<field name ="rev" type="radio" default="no" label = "Reverse" description= "Causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle) ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
+				<field name ="rev" type="radio" default="0" label = "Reverse" description= "Causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle) ">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</field>
-				<field name ="requeueTimeout" type="text" default="250" label = "Requeue Timeout" description= "Ms delay for requeue"/>
-				<field name ="rev" type="radio" default="no" label = "Reverse" description= "Causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle) ">
-					<option value="yes">Yes</option>
-					<option value="no">No</option>
-				</field>
-				<field name ="slideExpr" type="text" default="NULL" label = "Slide Expression" description= "expression for selecting slides (if something other than all children is required)" />
+
+				<field name ="slideExpr" type="text" default="null" label = "Slide Expression" description= "expression for selecting slides (if something other than all children is required)" />
 				<field name ="slideResize" type="text" default="1" label = "Slide Resize" description= "Force slide width/height to fixed size before every transition" />
-				<field name ="updateActivePagerLink" type="text" default="NULL" label = "Update Active Pager Link" description= "Callback fn invoked to update the active pager link (adds/removes activePagerClass style)" />
+				<field name ="updateActivePagerLink" type="text" default="null" label = "Update Active Pager Link" description= "Callback fn invoked to update the active pager link (adds/removes activePagerClass style)" />
 				
 			</fieldset>
 		</fields>
